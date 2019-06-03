@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngFor="let room of rooms">room {{room.nome}}</ion-title>
+  </ion-toolbar>
+  <ion-button id="button-back" color="primary" (click)="onClickBack()">Back</ion-button>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let conversa of conversas">
+    <ion-card-header>{{conversa.date}}</ion-card-header>
+      <ion-card-content>
+        <ion-card-title>{{conversa.nomeUser}}</ion-card-title>
+        <p>{{conversa.mensagemEnviada}}</p>
+      </ion-card-content>
+  </ion-card>
+  <ion-footer>
+      <ion-toolbar>
+          <ion-item no-lines #chatInput>
+            <ion-input spellcheck="true" autoComplete="true" autocorrect="true" maxlength="500" type="text" (keyup.enter)="sendMessage(newMessage); newMessage=''" placeholder="Type your message..." [(ngModel)]="newMessage"></ion-input>
+            <button  ion-button item-right (click)="sendMessage(newMessage); newMessage=''">
+              <ion-icon name="send"></ion-icon>
+            </button>
+          </ion-item>
+      </ion-toolbar>
+  </ion-footer>
+</ion-content>

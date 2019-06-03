@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Chat 
+    </ion-title>
+  </ion-toolbar>
+  <div class="input-name">
+    <ion-input placeholder=" Insira seu nome de usuário"></ion-input>
+  </div>
+    <ion-list class="list-rooms">
+      <ion-item>
+        <ion-label>Salas Ativas</ion-label>
+        <ion-select [(ngModel)]="selectRoom" placeholder="Salas">
+          <ion-select-option value="cinema">Cinema</ion-select-option>
+          <ion-select-option value="curiosidade">Curiosidades</ion-select-option>
+          <ion-select-option value="esporte">Esportes</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  <ion-button id="button-confirm" color="success" (click)="onClickGoRoom()">Entrar</ion-button>  
+</ion-header>
+

@@ -1,0 +1,31 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+
+.input-name{
+    margin: 10px;
+    align-content: center;
+    border-bottom: 4px solid red;
+    border-color: crimson;
+    border-radius: 5px;
+}
+
+.list-rooms{
+    margin: 10px;
+    border-bottom: 4px solid red;
+    border-radius: 5px;
+    border-color: crimson;
+}
+
+#button-confirm{
+    width: 100px;
+    align-items: center;
+    margin-left: 100px;
+}
+
+:root{
+    background-color: cornflowerblue;
+}
