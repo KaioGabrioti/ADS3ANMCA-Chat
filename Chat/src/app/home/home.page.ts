@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RoomPage } from "../room/room.page";
-import { Routes } from '@angular/router';
+import { Routes, NavigationExtras } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -17,6 +17,8 @@ export class HomePage {
     { nome: 'Cinema' },
   ];
 
+  value: any;
+
   selectRoom:string;
 
   constructor(public navCtrl: NavController) {}
@@ -27,7 +29,15 @@ export class HomePage {
   ];
 
   onClickGoRoom(){    
-    this.navCtrl.navigateForward('/room');
+
+    let rooms: NavigationExtras = {
+      state: {
+        salas: this.salas
+      }
+    }
+    this.navCtrl.navigateForward('/room', rooms);
+    console.log(this.value);
+    console.log(this.selectRoom)
   }
 
 

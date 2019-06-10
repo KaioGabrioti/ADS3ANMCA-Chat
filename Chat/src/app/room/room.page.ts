@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomePage } from "../home/home.page";
 import { NavController, NavParams} from '@ionic/angular';
-import { Routes } from '@angular/router';
+import { Routes, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-room',
@@ -10,7 +10,15 @@ import { Routes } from '@angular/router';
 })
 export class RoomPage implements OnInit {
   
-  constructor(public navCtrl: NavController) {}
+  data: any; 
+
+  constructor(public navCtrl: NavController, private route: ActivatedRoute, private router: Router) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.data = this.router.getCurrentNavigation().extras.state.salas;
+      }
+    });
+  }
 
   ngOnInit() {
   }
@@ -54,6 +62,10 @@ export class RoomPage implements OnInit {
 
   onClickBack(){    
     this.navCtrl.navigateBack('/home');
+  }
+
+  sendMessage(newMessage){
+    
   }
 
 }
